@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adoção de Pets</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Encontre seu Melhor Amigo!</h1>
+        <p>Descubra nossos adoráveis pets que estão esperando por um lar cheio de amor. Faça a diferença na vida deles!</p>
+    </header>
+
+    <main>
+        <!-- Filtro de Pesquisa -->
+        <section class="filter">
+            <input type="text" id="searchName" placeholder="Buscar por Nome do Pet" oninput="filterPets()">
+            <input type="text" id="searchBreed" placeholder="Buscar por Raça" oninput="filterPets()">
+        </section>
+
+        <!-- Galeria de Perfis dos Pets -->
+        <section class="gallery" id="petGallery">
+            <article class="pet-card" data-name="Caramelo" data-breed="SRD">
+                <img src="src/image/pet2.png" alt="Cachorro Caramelo" class="pet-photo">
+                <h2>Caramelo</h2>
+                <p>Idade: 2 anos<br>Raça: SRD<br>Temperamento: Amigável e energético.</p>
+                <button onclick="showInterestForm('Caramelo')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Mel" data-breed="Persa">
+                <img src="src/image/download_1.png" alt="Gato Mel" class="pet-photo">
+                <h2>Mel</h2>
+                <p>Idade: 1 ano<br>Raça: Persa<br>Temperamento: Calma e carinhosa.</p>
+                <button onclick="showInterestForm('Mel')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Esmeralda" data-breed="Labrador">
+                <img src="src/image/Pet3.png" alt="Cachorro Esmeralda" class="pet-photo">
+                <h2>Esmeralda</h2>
+                <p>Idade: 4 anos<br>Raça: Labrador<br>Temperamento: Leal e brincalhona.</p>
+                <button onclick="showInterestForm('Esmeralda')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Kira" data-breed="Golden Retriever">
+                <img src="src/image/kira.png" alt="Cachorro Kira" class="pet-photo">
+                <h2>Kira</h2>
+                <p>Idade: 3 anos<br>Raça: Golden Retriever<br>Temperamento: Leal e brincalhão.</p>
+                <button onclick="showInterestForm('Kira')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Satanas" data-breed="Pinscher">
+                <img src="src/image/f3b0cf7b92f443072c60eca20ee3a49c (1).png" alt="Cachorro Satanas" class="pet-photo">
+                <h2>Satanas</h2>
+                <p>Idade: 1 ano<br>Raça:Pinscher<br>Temperamento:Raivoso Leal e brincalhão.</p>
+                <button onclick="showInterestForm('Satanas')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Max" data-breed="Pastor Alemão">
+                <img src="src/image/download-_1_.png" alt="Cachorro Max" class="pet-photo">
+                <h2>Max</h2>
+                <p>Idade: 2 anos<br>Raça: Pastor Alemão<br>Temperamento: Agitado e brincalhão.</p>
+                <button onclick="showInterestForm('Max')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Jake" data-breed="Pitbull">
+                <img src="image/filhote-de-pitbull6.png" alt="Cachorro Jake" class="pet-photo">
+                <h2>Jake</h2>
+                <p>Idade: 2 messes<br>Raça: Pitbull<br>Temperamento: Agitado e brincalhão.</p>
+                <button onclick="showInterestForm('Jake')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Alfredo" data-breed="Macaquinho Albino">
+                <img src="src/image/e22fee6f8aace464fed9cf1f31aa38b5.png" alt="Macaquinho Albino" class="pet-photo">
+                <h2>Alfredo</h2>
+                <p>Idade: 3 anos<br>Raça: Macaquinho Albino<br>Temperamento: Brincalhão.</p>
+                <button onclick="showInterestForm('Alfredo')">Marcar Interesse</button>
+            </article>
+            <article class="pet-card" data-name="Guilherme" data-breed="Gabiru">
+                <img src="src/image/download-_2_.png" alt="Gabiru" class="pet-photo">
+                <h2>Guilherme</h2>
+                <p>Idade: 2 anos<br>Raça: Gabiru<br>Temperamento: Feliz e brincalhão.</p>
+                <button onclick="showInterestForm('Guilherme')">Marcar Interesse</button>
+            </article>
+        </section>
+
+        <!-- Modal de Formulário de Interesse -->
+        <div id="interest-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Marque seu Interesse na Adoção de um Pet</h2>
+                <form id="interest-form">
+                    <label for="name">Seu Nome:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Seu E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="pet">Qual Pet Você Está Interessado?</label>
+                    <input type="text" id="pet" name="pet" readonly>
+
+                    <button type="submit">Enviar Interesse</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Depoimentos de Adoções Bem-Sucedidas -->
+        <section class="testimonials">
+            <h2>Histórias de Adoção Bem-Sucedidas</h2>
+            <p>"Adotei o Gabiru há 6 meses e ele trouxe alegria para toda a família!" - Ana</p>
+            <p>"Agora a Alfredo é parte da nossa vida. Estamos muito felizes com a adoção!" - João</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Edison Campos© 2024 - Adoção de Pets. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="src/js/script.js"></script>
+</body>
+</html>
